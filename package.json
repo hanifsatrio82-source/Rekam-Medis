@@ -1,0 +1,35 @@
+{
+  "name": "rme-praktik",
+  "version": "1.0.0",
+  "description": "Rekam Medis Elektronik — Qwik City + Supabase",
+  "private": true,
+  "scripts": {
+    "build": "qwik build",
+    "build.client": "vite build",
+    "build.server": "vite build -c adapters/vercel-edge/vite.config.ts",
+    "dev": "vite --mode ssr",
+    "preview": "qwik build preview && vite preview --open",
+    "qwik": "qwik",
+    "start": "vite --open --mode ssr",
+    "postinstall": "node scripts/patch-qwik.js"
+  },
+  "devDependencies": {
+    "@builder.io/qwik": "^1.16.0",
+    "@builder.io/qwik-city": "^1.16.0",
+    "@types/node": "^22.14.0",
+    "ignore": "^7.0.7",
+    "typescript": "^5.7.3",
+    "vite": "^6.4.3",
+    "vite-tsconfig-paths": "^5.1.4"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.49.4"
+  },
+  "engines": {
+    "node": ">=18.17.0"
+  },
+  "allowScripts": {
+    "esbuild@0.25.12": true,
+    "sharp@0.34.5": true
+  }
+}

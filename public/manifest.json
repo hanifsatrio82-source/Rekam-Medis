@@ -1,0 +1,12 @@
+{
+  "name": "RME Praktik",
+  "short_name": "RME",
+  "description": "Rekam Medis Elektronik untuk Praktik Dokter",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#2563eb",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

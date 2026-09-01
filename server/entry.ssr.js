@@ -1,0 +1,1 @@
+import{_ as t}from"./q-Bw8sEejM.js";import{r,R as a,m as n}from"./q-irQYbqvO.js";function m(e){return r(t(a,null,3,"OH_0"),{manifest:n,...e,prefetchStrategy:{implementation:{linkInsert:"html-append",workerFetchInsert:"always",prefetchEvent:"always"}}})}export{m as default};
