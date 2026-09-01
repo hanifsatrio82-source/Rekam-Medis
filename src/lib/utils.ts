@@ -1,3 +1,44 @@
+import type { InputHTMLAttributes, ChangeEvent } from "react";
+
+// ─── Numeric input helper ──────────────────────────────────────────────────
+
+export function numericProps(
+  value: number | string,
+  onChange: (val: number) => void,
+): InputHTMLAttributes<HTMLInputElement> {
+  return {
+    type: "text",
+    inputMode: "numeric",
+    value: String(value ?? ""),
+    onChange: (e: ChangeEvent<HTMLInputElement>) => {
+      const v = e.target.value.replace(/[^0-9]/g, "");
+      onChange(v === "" ? 0 : parseInt(v, 10));
+    },
+  };
+}
+
+// ─── Decimal input helper (for fields like temperature) ────────────────────
+
+export function decimalProps(
+  value: number | string,
+  onChange: (val: string) => void,
+): InputHTMLAttributes<HTMLInputElement> {
+  return {
+    type: "text",
+    value: String(value ?? ""),
+    onChange: (e: ChangeEvent<HTMLInputElement>) => {
+      const raw = e.target.value;
+      let cleaned = raw.replace(/[^0-9.,]/g, "");
+      // normalize comma → dot
+      cleaned = cleaned.replace(",", ".");
+      // collapse multiple dots: keep only first
+      const idx = cleaned.indexOf(".");
+      if (idx !== -1) cleaned = cleaned.slice(0, idx + 1) + cleaned.slice(idx + 1).replace(/\./g, "");
+      onChange(cleaned);
+    },
+  };
+}
+
 // ─── Format helpers ───────────────────────────────────────────────────────────
 
 export function formatRupiah(amount: number | null | undefined): string {

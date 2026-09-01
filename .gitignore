@@ -1,16 +1,17 @@
 node_modules
+.next
+out
 
 # Vercel
 .vercel
+
+# Env
+.env
+.env.local
+!.env.example
 
 # OS
 .DS_Store
 Thumbs.db
 
-# Env
-.env
-.env.*
-!.env.example
-
 .vercel
-.env*
